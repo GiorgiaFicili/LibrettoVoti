@@ -13,6 +13,8 @@ public class Libretto {
 		//Questo e' l'unico punto in cui so se la List e' di tipo ArrayList o di tipo LinkedList
 		//Se devo modificare qualcosa nel mio programma, basta toccare un solo punto strategico
 		
+		System.out.println("Sono Libretto e sono vivo!");
+		
 	}
 	
 	public void add(Voto v) {
@@ -88,6 +90,29 @@ public class Libretto {
 			if(v.getVoto()==punteggio) {
 				risultato.add(v);
 				//risultato.voti.add(v);
+			}
+			
+		}
+		
+		return risultato;
+	}
+	
+	/**
+	 * Ricerca un Voto del corso di cui e' specificato il nome
+	 * Se il corso non esiste, restituisce null.
+	 * @param nomeCorso
+	 * @return
+	 */
+	
+	public Voto ricercaCorso(String nomeCorso) {
+		
+		Voto risultato = null;
+		
+		for(Voto v : this.voti) {
+			
+			if(v.getNome().equals(nomeCorso)) {
+				risultato = v;
+				break;
 			}
 			
 		}
